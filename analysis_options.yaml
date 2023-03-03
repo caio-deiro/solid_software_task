@@ -1,5 +1,1 @@
 include: package:solid_lints/analysis_options.yaml
-
-lints:
-  rules:
-    no-empty-block: true
