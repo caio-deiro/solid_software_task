@@ -1,5 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-import 'package:solid_software_task/app/home/home_controller.dart';
+import 'package:solid_software_task/app/pages/home/home_controller.dart';
 import 'package:solid_software_task/app/shared/tools.dart';
 
 /// Class Widget
@@ -18,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => setState(() {}),
+      onTap: () => setState(() => Void),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('SOLID SOFTWARE TASK'),

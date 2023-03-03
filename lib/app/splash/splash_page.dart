@@ -14,23 +14,23 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   /// Set the splash duration in seconds
-  int seconds = 3;
+  int durationSeconds = 3;
 
   /// Animation timer instance
-  late Timer animationTimer;
+  Timer? animationTimer;
 
   @override
   void initState() {
     super.initState();
     animationTimer = Timer(
-      Duration(seconds: seconds),
+      Duration(seconds: durationSeconds),
       () => Navigator.pushReplacementNamed(context, '/home'),
     );
   }
 
   @override
   void dispose() {
-    animationTimer.cancel();
+    animationTimer?.cancel();
     super.dispose();
   }
 
@@ -40,8 +40,8 @@ class _SplashPageState extends State<SplashPage> {
       body: GestureDetector(
         onTap: () {
           /// Cancel splash animation and go to home page
-          animationTimer.cancel();
-          if (!animationTimer.isActive) {
+          animationTimer?.cancel();
+          if (!(animationTimer?.isActive ?? false)) {
             Navigator.pushReplacementNamed(context, '/home');
           }
         },
